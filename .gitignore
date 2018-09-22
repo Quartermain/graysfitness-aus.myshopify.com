@@ -1,0 +1,9 @@
+.git
+node_modules/
+theme.lock
+package-lock.json
+deploy.log
+dist/
+upload/
+src/config.yml
+.idea/
