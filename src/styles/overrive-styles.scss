@@ -1,0 +1,46 @@
+$c-blue: #2e55a5;
+$c-black: #000;
+$c-white: #fff;
+$c-gray: #f7f7f7;
+
+.block-text {
+  @media (min-width: 960px) {
+    display: flex;
+  }
+
+  .eight.columns {
+    background: $c-gray;
+  }
+
+  .header {
+    background: $c-blue;
+    color: $c-white;
+    padding: 20px;
+    font-size: 34px;
+    text-transform: uppercase;
+    border-bottom: solid 10px $c-black;
+    margin-bottom: 20px;
+  }
+  
+  .item-block {
+    margin-bottom: 30px;
+    padding: 20px;
+    
+    .col-img {
+      width: 20%;
+      float: left;
+      text-align: center;
+      vertical-align: top;
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .col-content {
+      width: 75%;
+      float: left;
+      margin-left: 5%;
+    }
+  }
+}
