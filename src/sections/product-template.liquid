@@ -255,7 +255,102 @@
       </div>
 
       
-{% comment %} <div class="container">Condition and why choose</div> {% endcomment %}
+    <div class="container block-text">
+      <div class="eight columns">
+        <div class="txt-header">CONDITION</div>
+
+        <div class="item-block clearfix">
+          <div class="col-img">
+            <img src="{{ 'refurbished.png' | file_img_url: 'master' }}" >            
+          </div>
+
+          <div class="col-content">
+            <h3>REFURBISHED</h3>
+            <p>Reconditioned equipment has been looked over by our expert technicians and restored to the best possible condition. All drive belts, motors and plastics are reconditioned and resprayed or replaced to ensure this equipment has the best possible life ahead of it. Not quite new – but pretty close!</p>
+          </div>
+        </div>
+
+        <div class="item-block clearfix">
+          <div class="col-img">
+            <img src="{{ 'serviced.png' | file_img_url: 'master' }}" >            
+          </div>
+
+          <div class="col-content">
+            <h3>CLEANED & SERVICED</h3>
+            <p>Cleaned and serviced equipment has had its drive belts, motors and cables tested and replaced if need be. This equipment is in working order and certified by our technicians, all ready to go once you buy.</p>
+          </div>
+        </div>
+
+        <div class="item-block clearfix">
+          <div class="col-img">
+            <img src="{{ 'handshake.png' | file_img_url: 'master' }}" >            
+          </div>
+
+          <div class="col-content">
+            <h3>AS TRADED</h3>
+            <p>As Traded equipment is available to purchase in the condition that we received it, meaning you get a great bargain. These pre-loved items may have some nicks, scratches etc.  </p>
+          </div>
+        </div>
+
+        <div class="item-block clearfix">
+          <div class="col-img">
+            <img src="{{ 'new.png' | file_img_url: 'master' }}" >            
+          </div>
+
+          <div class="col-content">
+            <h3>NEW</h3>
+            <p>Brand spanking new equipment and ready to buy now! This equipment has come to us unused, undamaged and ready for immediate use. Don’t miss out, new stock doesn’t last long.</p>
+          </div>
+        </div>
+      </div>
+      <div class="eight columns">
+        <div class="txt-header">WHY CHOOSE GRAYS FITNESS?</div>
+
+        <div class="item-block clearfix">
+          <div class="col-img">
+            <img src="{{ 'noun-stamp.png' | file_img_url: 'master' }}" >            
+          </div>
+
+          <div class="col-content">
+            <h3>WARRANTY</h3>
+            <p>Warranty is available on all products ranging from 3 months to 3 years depending on the item and what condition it’s in. For more information on what kind of warranty your wanted item qualifies for, click here.</p>
+          </div>
+        </div>
+
+        <div class="item-block clearfix">
+          <div class="col-img">
+            <img src="{{ 'national-delivery.png' | file_img_url: 'master' }}" >            
+          </div>
+
+          <div class="col-content">
+            <h3>NATIONAL DELIVERY</h3>
+            <p>We deliver anywhere in Australia including regional areas. We also deliver worldwide, no matter where you’re from Grays Fitness will strive to get your equipment to you. Request a quote and we can confirm your delivery costs. </p>
+          </div>
+        </div>
+
+        <div class="item-block clearfix">
+          <div class="col-img">
+            <img src="{{ 'finance-available.png' | file_img_url: 'master' }}" >            
+          </div>
+
+          <div class="col-content">
+            <h3>Finance or Rent-To-Own</h3>
+            <p>We offer different options to pay for your items, from financing through one of our preferred third-party suppliers, or weekly and rental payments over 36 to 60 months. For more information on these payment options, click here.</p>
+          </div>
+        </div>
+
+        <div class="item-block clearfix">
+          <div class="col-img">
+            <img src="{{ 'expert-technicians.png' | file_img_url: 'master' }}" >            
+          </div>
+
+          <div class="col-content">
+            <h3>EXPERT TECHNICIANS</h3>
+            <p>Our expert technicians are trained and qualified to service and refurbish your equipment. Every piece is looked over by our experts making sure it’s in the best possible condition before it goes out.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
       {% if section.settings.display_related_products %}
         {% include 'related-products' %}
@@ -265,8 +360,6 @@
       {% endif %}
 
     {% endif %}
-
-{% comment %} <div class="container">Customer Testimonial</div> {% endcomment %}
 
 {% schema %}
 
