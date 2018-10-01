@@ -49,6 +49,7 @@
     },
     "search": {
       "title": "Search",
+      "title_on_collection": "Search our products...",
       "description": "Search our shop",
       "no_results_html": "Your search for \"{{ terms }}\" did not match any results. Please modify your search terms and try again.",
       "advanced_search_html": "Advanced Search &#8594;",

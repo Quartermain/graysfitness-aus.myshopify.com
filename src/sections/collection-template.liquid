@@ -37,6 +37,11 @@
       {% if section.settings.display_collection_title %}
         <div class="caption captionOverlay--true">
           <h1 class="headline">{{ collection.title }}</h1>
+          <form action="/pages/search-results" class="search_form">
+            <input type="hidden" name="type" value="product" />
+            <span class="icon-search search-submit"></span>
+            <input type="text" name="q" placeholder="{{ 'general.search.title_on_collection' | t: shop_name: shop.name }}" value="{% if search and search.results.first.price %}{{ search.terms | replace: '*', '' }}{% endif %}" autocapitalize="off" autocomplete="off" autocorrect="off" />
+          </form>
         </div>
       {% endif %}
   </header>

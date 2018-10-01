@@ -21,5 +21,8 @@
     {% unless collection_handles contains 'coming-soon' %}
       {% include 'product-notify-me' %}
       {% include 'product-form', show_payment_button_quickshop: settings.show_payment_button %}
+    <div class="quote-btn">
+        {% include 'rfq_button' %}
+    </div>
     {% endunless %}
 </div>
