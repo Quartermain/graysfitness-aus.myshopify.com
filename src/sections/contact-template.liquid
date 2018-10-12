@@ -34,7 +34,7 @@
 
     {{ page.content }}
 
-    {% form 'contact' %}
+    {% form 'contact' , id: 'form_contact_mc' %}
       {% if form.posted_successfully? %}
         <p class="quote">{{ 'contact.form.post_success' | t }}</p>
       {% endif %}
@@ -66,14 +66,29 @@
         <input type="text" id="contactFormName" name="contact[{{ name_attr }}]" placeholder="{{ 'contact.form.name' | t }}" autocapitalize="words" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}" required="required">
        </div>
        <div class="five columns omega">
+        <label for="contactFormBusinessName">{{ 'contact.form.business_name' | t }}</label>
+        <input type="text" id="contactFormBusinessName" name="contact[{{ 'contact.form.business_name' | t }}]" placeholder="{{ 'contact.form.business_name' | t }}" >
+       </div>
+       <br class="clear" />
+       <div class="five columns alpha">
         <label for="contactFormEmail">{{ 'contact.form.email' | t }} <span class="red">*</span></label>
         <input type="email" id="contactFormEmail" name="contact[email]" placeholder="{{ 'contact.form.email' | t }}" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" required="required">
        </div>
-       {% comment %}
-        {% assign name_attr = 'contact.form.phone' | t | handle %}
-        <label for="contactFormPhone" class="hidden-label">{{ 'contact.form.phone' | t }}</label>
-        <input type="tel" id="contactFormPhone" name="contact[{{ name_attr }}]" placeholder="{{ 'contact.form.phone' | t }}" pattern="[0-9\-]*" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
-        {% endcomment %}
+       <div class="five columns omega">
+           {% assign name_attr = 'contact.form.phone' | t | handle %}
+           <label for="contactFormPhone" class="hidden-label">{{ 'contact.form.phone' | t }}</label>
+           <input type="tel" id="contactFormPhone" name="contact[{{ name_attr }}]" placeholder="{{ 'contact.form.phone' | t }}" pattern="[0-9\-]*" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+       </div>
+       <br class="clear" />
+       <div class="five columns alpha">
+        <label for="contactFormFindUs">{{ 'contact.form.how_did_find_us' | t }}</label>
+        <input type="text" id="contactFormFindUs" name="contact[{{ 'contact.form.how_did_find_us' | t }}]" placeholder="{{ 'contact.form.how_did_find_us' | t }}">
+       </div>
+       <div class="five columns omega">
+           {% assign name_attr = 'contact.form.post_code' | t | handle %}
+           <label for="contactFormPostCode" class="hidden-label">{{ 'contact.form.post_code' | t }}</label>
+           <input type="text" id="contactFormPostCode" name="contact[{{ 'contact.form.post_code' | t }}]" placeholder="{{ 'contact.form.post_code' | t }}">
+       </div>
 
       <label for="contactFormMessage">{{ 'contact.form.message' | t }} <span class="red">*</span></label>
       <textarea rows="5" id="contactFormMessage" name="contact[body]" placeholder="{{ 'contact.form.message' | t }}" required="required">{% if form.body %}{{ form.body }}{% endif %}</textarea>
@@ -85,6 +100,37 @@
       <input type="submit" class="submit action_button" value="{{ 'contact.form.send' | t }}" />
     {% endform %}
   </div>
+    <script type="application/javascript" defer>
+
+        $("form#form_contact_mc").submit(function (event) {
+            var self = this;
+            event.preventDefault();
+            var name = $("input#contactFormName").val();
+            var email = $("input#contactFormEmail").val();
+
+            if (name != "" && email != "") {
+                $("input#mce-FNAME").val(name);
+                $("input#mce-EMAIL").val(email);
+                $("form#mc-form").submit();
+
+            }
+
+            setTimeout(self.submit(), 1000)
+
+        })
+
+    </script>
+    <!-- Begin Mailchimp Signup Form -->
+    <div id="mc_embed_signup" style="display: none">
+        <form action="https://graysfitness.us4.list-manage.com/subscribe/post?u=2059bc45b5f1cae2283e16941&amp;id=6a2792110e" method="post" id="mc-form" target="_blank" novalidate>
+            <input type="text" value="" name="FNAME" class="required" id="mce-FNAME">
+            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+            <input type="text" name="b_2059bc45b5f1cae2283e16941_6a2792110e" tabindex="-1" value="">
+            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+        </form>
+    </div>
+
+    <!--End mc_embed_signup-->
 </div>
 
 {% if section.settings.show_map and section.settings.contact_address != blank %}
