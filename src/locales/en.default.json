@@ -186,6 +186,9 @@
       "name": "Name",
       "email": "Email",
       "phone": "Phone Number",
+      "business_name": "Business Name",
+      "how_did_find_us": "How did you find us ?",
+      "post_code": "Post Code",
       "message": "Message",
       "send": "Send",
       "post_success": "Thanks for contacting us. We'll get back to you as soon as possible."
