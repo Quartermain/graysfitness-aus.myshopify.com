@@ -155,7 +155,7 @@
       "from": "from"
     },
     "product": {
-      "sold_out": "Sold Out",
+      "sold_out": "Sold out",
       "unavailable": "Unavailable",
       "quantity": "Qty",
       "add_to_cart": "Add to Cart",
@@ -424,6 +424,27 @@
       "items_with_count": {
         "one": "{{ count }} item",
         "other": "{{ count }} items"
+      }
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "order_summary": {
+        "free_shipping_discount_label": "Will contact you with a quote.",
+        "free_total_label": "Will contact you with a quote."
+      },
+      "shipping": {
+        "free_rate_label": "Will contact you with a quote."
+      },
+      "payment_summary": {
+        "free_label": "Will contact you with a quote."
+      },
+      "payment": {
+        "free_order_notice_html": "Will contact you shortly with a quote for package."
+      },
+      "thank_you": {
+        "thank_you_description": "We've accepted your order, and we're getting it ready. We will be in contact with you shortly with a shipping quote.",
+        "confirmed_description": "We've accepted your order, and we're getting it ready. We will be in contact with you shortly with a shipping quote."
       }
     }
   }

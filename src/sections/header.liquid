@@ -47,7 +47,7 @@
   {% if section.settings.search_enabled %}
     <div class="dropdown_container center" data-dropdown="search">
       <div class="dropdown">
-        <form action="/pages/search-results" class="header_search_form">
+        <form action="/search" class="header_search_form">
           {% if settings.search_option != 'everything' %}
             <input type="hidden" name="type" value="product" />
           {% endif %}
@@ -298,7 +298,7 @@
           {% endif %}
           {% if section.settings.search_enabled %}
             <li class="search_container" data-autocomplete-{{ settings.enable_autocomplete }}>
-              <form action="/pages/search-results" class="search_form">
+              <form action="/search" class="search_form">
                 {% if settings.search_option != 'everything' %}
                   <input type="hidden" name="type" value="product" />
                 {% endif %}
@@ -336,7 +336,7 @@
         {% if section.settings.search_enabled %}
           <div class="dropdown_container center" data-dropdown="search">
             <div class="dropdown" data-autocomplete-{{ settings.enable_autocomplete }}>
-              <form action="/pages/search-results" class="header_search_form">
+              <form action="/search" class="header_search_form">
                 {% if settings.search_option != 'everything' %}
                   <input type="hidden" name="type" value="product" />
                 {% endif %}

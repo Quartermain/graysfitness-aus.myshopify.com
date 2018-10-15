@@ -121,7 +121,7 @@
               <link itemprop="availability" href="http://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}">
               <meta itemprop="itemCondition" content="New" />
 
-              <span class="sold_out">{% if variant.available == false %}{{ 'products.product.sold_out' | t }}{% endif %}</span>
+              <span class="sold_out">{% if variant.available == false %}{{ 'products.product.sold_out' | t }} {{ variant.price | money }}{% endif %}</span>
               <span itemprop="price" content="{{ variant.price | money_without_currency | remove: "," }}" class="{% if variant.compare_at_price > variant.price %}sale{% endif %}">
                 <span class="current_price {% if product.available == false %}hidden{% endif %}">
                   {% if variant.price > 0 %}
@@ -147,6 +147,7 @@
             </p>
 
             {% include 'product-notify-me' %}
+            
           {% endif %}
 
           {% if section.settings.product_description_position == "top" %}
@@ -160,6 +161,9 @@
           {% unless collection_handles contains 'coming-soon' %}
             {% include 'product-form' with 'product' %}
           {% endunless %}
+          <form action="cart">
+          		<div class="g-atc"></div>
+          	</form>
 
           {% if section.settings.product_description_position == "bottom" %}
             {% if product.description != blank %}
