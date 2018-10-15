@@ -111,18 +111,25 @@
             if (name != "" && email != "") {
                 $("input#mce-FNAME").val(name);
                 $("input#mce-EMAIL").val(email);
-                $("form#mc-form").submit();
+                var $form = $("form#mc-form");
 
+                $.ajax({
+                    type: $form.attr('method'),
+                    url: $form.attr('action'),
+                    data: $form.serialize(),
+                    cache       : false,
+                    dataType    : 'jsonp',
+                    success     : function(data) {
+                        setTimeout(self.submit(), 1000)
+                    }
+                })
             }
-
-            setTimeout(self.submit(), 1000)
-
         })
 
     </script>
     <!-- Begin Mailchimp Signup Form -->
     <div id="mc_embed_signup" style="display: none">
-        <form action="https://graysfitness.us4.list-manage.com/subscribe/post?u=2059bc45b5f1cae2283e16941&amp;id=6a2792110e" method="post" id="mc-form" target="_blank" novalidate>
+        <form action="https://graysfitness.us4.list-manage.com/subscribe/post-json?u=2059bc45b5f1cae2283e16941&id=6a2792110e&c=?" method="get" id="mc-form" target="_blank" novalidate>
             <input type="text" value="" name="FNAME" class="required" id="mce-FNAME">
             <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
             <input type="text" name="b_2059bc45b5f1cae2283e16941_6a2792110e" tabindex="-1" value="">
