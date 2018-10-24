@@ -1,0 +1,53 @@
+
+<div class="container">
+	{% for block in section.blocks %}
+		<div class="one-third column">
+			<div class="image-tag">
+	          {% if block.settings.image_product !=blank %}
+	          	<a href="{{ block.settings.link }}">
+	          		<img class="product-image" src="{{ block.settings.image_product  | img_url: 'original' }}" alt="image_product">
+	          	</a>
+	          {% endif %}
+	        </div>
+
+	        {% if block.settings.txtdescription !=blank %}
+		        <div class="txt-description">
+			    	<a href="{{ block.settings.link }}">
+						{{ block.settings.txtdescription }}
+					</a>
+		        </div>
+	        {% endif %}	        
+		</div>
+	{% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "shopbypurpose",
+    "blocks": [
+	    {
+	      "type": "image",
+	      "name": "ElementContent",
+	      "settings": [
+	        {
+	          "type": "image_picker",
+	          "id": "image_product",
+	          "label": "Image product"
+	        },
+	        {
+	        	"type": "text",
+	        	"id" : "txtdescription",
+	        	"label": "Text tag"
+	        },
+	        {
+	       		"type": "url",
+	          	"id": "link",
+	          	"label": "Link",
+	          	"info": "If the option \"Separate slideshow from header\" is checked and that no button is present, the whole slide becomes clickable."
+	        }
+	      ]
+	    }
+	]
+  }
+
+{% endschema %}

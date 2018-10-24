@@ -6,7 +6,6 @@
 <!--[if IE 9 ]><html class="ie ie9" lang="{{ shop.locale }}"> <![endif]-->
 <!--[if (gte IE 10)|!(IE)]><!--><html lang="{{ shop.locale }}"> <!--<![endif]-->
   <head>
-                    {% include 'evm-seo' %}
     <meta charset="utf-8">
     <meta http-equiv="cleartype" content="on">
     <meta name="robots" content="index,follow">
@@ -25,7 +24,7 @@
     </script>
 
     {% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %}{% endif %}
-    {% comment %}<title>{% if template contains "index" %}{{ page_title }}{% else %}{{ page_title }}{% if current_tags %} {{ 'general.meta.tagged_html' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} {{ 'general.meta.page' | t: page_number: current_page }}{% endif %}{% unless page_title contains shop.name %} - {{ shop.name }}{% endunless %}{% endif %}</title>{% endcomment %}
+    <title>{% if template contains "index" %}{{ page_title }}{% else %}{{ page_title }}{% if current_tags %} {{ 'general.meta.tagged_html' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} {{ 'general.meta.page' | t: page_number: current_page }}{% endif %}{% unless page_title contains shop.name %} - {{ shop.name }}{% endunless %}{% endif %}</title>
 
     {% if page_description %}
       <meta name="description" content="{{ page_description | escape }}{% if current_tags %} {{ 'general.meta.tagged_html' | t: tags: meta_tags | escape }}.{% endif %}{% if current_page != 1 %} {{ 'general.meta.page' | t: page_number: current_page }}.{% endif %}" />
@@ -54,13 +53,6 @@
     {% endif %}
     {{ content_for_header }}
   	
-    <!--Add to quote button styling-->
-    <style> 
-      button.btn.rfq-btn{  
-      		width: 100%;
-      } 
-</style> 
-    
 </head>
   {% if template contains "index" %}
     {% assign feature_image = true %}
@@ -201,10 +193,7 @@
       {{ settings.custom_scripts }}
     </script>
     {% include 'rfq_script' %}
-  
-{% include 'swymSnippet' %}
-
-</body>
+  </body>
 </html>
 {% endcapture %}
 {% assign content = content | replace_first: '<!DOCTYPE', '!DOCTYPE' | split: ' <' %}

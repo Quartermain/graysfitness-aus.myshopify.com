@@ -1,6 +1,6 @@
 development:
   password: d573ee3adc92ab0af9f7f4cbef33051a
-  theme_id: "33165901889"
+  theme_id: "33192771649"
   store: graysfitness-aus.myshopify.com
   ignore_files:
     - settings_data.json # Uncomment this line to avoid resetting theme settings

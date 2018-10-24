@@ -5603,8 +5603,9 @@ button.update {
   padding-bottom: 0;
 }
 .modal p.modal_price, p.modal_price {
-  font-size: 20px;
+  font-size: 25px;
   margin-bottom: 10px;
+  font-weight: 600;
 }
 .modal form {
   margin-bottom: 10px;
@@ -10008,6 +10009,25 @@ $delay: 0;
 
 /* #Custom Styles
 ================================================== */
+
+.page-brandcollection {
+  .image-tag {
+    line-height: 100%;
+    img {
+      max-width: 100%;
+    }
+  }
+  .txt-description {
+    text-align: center;
+    margin: 20px 0;
+    a {
+      color: {{ settings.regular_color }};
+      &:hover {
+        color: {{ settings.headline_color }};
+      }
+    }
+  }
+}
 
 
 /* Globo Request for Quote */

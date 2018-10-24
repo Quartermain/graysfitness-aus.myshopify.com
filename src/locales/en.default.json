@@ -129,7 +129,7 @@
     "sidebar": {
       "collections": "Collections",
       "product_types": "Types",
-      "vendors": "Vendors",
+      "vendors": "Brands",
       "tags": "Tags",
       "clear": "Clear"
     },
@@ -160,7 +160,7 @@
       "quantity": "Qty",
       "add_to_cart": "Add to Cart",
       "add_to_cart_success": "Added",
-      "vendor": "Vendor",
+      "vendor": "Brands",
       "related_items": "Related Items",
       "collections": "Collections",
       "product_types": "Type",
