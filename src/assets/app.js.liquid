@@ -2700,6 +2700,7 @@ $(function() {
       var productData;
       var productForm;
       var notifyForm;
+      var quoteBtn;
 
       //EVENT - click on quick-shop
       $('body').on('click', '.js-quick-shop-link', function(e){
@@ -2749,6 +2750,7 @@ $(function() {
         //Find current product and notify forms
         notifyForm = $(this).next('.js-forms').find('.notify_form');
         productForm = $(this).next('.js-forms').find('.product_form');
+        quoteBtn = $(this).next('.js-forms').find('.quote-btn');
         //Add Product Ids to parent container so form will work
         $('.quick-shop .container').attr('class', 'container section product-' + productData.product_id);
         $('.quick-shop .container').attr('id', 'product-' + productData.product_id);
@@ -2763,6 +2765,7 @@ $(function() {
 
         //Copy form data to modal
         $('.remodal.quick-shop .js-product-form').html(productForm);
+        $('.remodal.quick-shop .js-quote-btn').html(quoteBtn);
         $('.remodal.quick-shop .js-notify-form').html(notifyForm);
 
         //Initiate selectCallback

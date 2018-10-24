@@ -1,4 +1,10 @@
 {% if product.available %}
+  {% assign not_for_sale = false %}
+  {% for tag in product.tags %}
+    {% if tag contains "not-for-sale" %}
+      {% assign not_for_sale = true %}
+    {% endif %}
+  {% endfor %}
 
   {% if section.settings.show_payment_button %}
     {% assign show_payment_button = true %}
@@ -79,6 +85,7 @@
           <span class="ss-icon product-plus js-change-quantity" data-func="plus"><span class="icon-plus"></span></span>
         </div>
       {% endif %}
+      {% unless not_for_sale %}
       <div class="purchase-details__buttons">
         {% if settings.cart_action == 'reload_page' %}
           <input type="hidden" name="return_to" value="back" />
@@ -87,6 +94,7 @@
         {% endif %}
 
         {% capture add_to_cart_label %}{% if collection_handles contains 'pre-order' %}{{ 'collections.general.pre_order' | t }}{% else %}{{ 'products.product.add_to_cart' | t }}{% endif %}{% endcapture %}
+
         <button type="submit" name="add" class="action_button add_to_cart {% if show_payment_button %} action_button--secondary {% endif %}" data-label={{ add_to_cart_label | json }}>
           <span class="text">{{ add_to_cart_label }}</span>
           <svg x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" class="checkmark">
@@ -97,6 +105,7 @@
           {{ form | payment_button }}
         {% endif %}
       </div>
+      {% endunless %}
     </div>
   {% endform %}
 </div>

@@ -49,6 +49,7 @@
     },
     "search": {
       "title": "Search",
+      "title_on_collection": "Search our products...",
       "description": "Search our shop",
       "no_results_html": "Your search for \"{{ terms }}\" did not match any results. Please modify your search terms and try again.",
       "advanced_search_html": "Advanced Search &#8594;",
@@ -154,7 +155,7 @@
       "from": "from"
     },
     "product": {
-      "sold_out": "Sold Out",
+      "sold_out": "Sold out",
       "unavailable": "Unavailable",
       "quantity": "Qty",
       "add_to_cart": "Add to Cart",
@@ -185,6 +186,9 @@
       "name": "Name",
       "email": "Email",
       "phone": "Phone Number",
+      "business_name": "Business Name",
+      "how_did_find_us": "How did you find us ?",
+      "post_code": "Post Code",
       "message": "Message",
       "send": "Send",
       "post_success": "Thanks for contacting us. We'll get back to you as soon as possible."
@@ -423,6 +427,27 @@
       "items_with_count": {
         "one": "{{ count }} item",
         "other": "{{ count }} items"
+      }
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "order_summary": {
+        "free_shipping_discount_label": "Will contact you with a quote.",
+        "free_total_label": "Will contact you with a quote."
+      },
+      "shipping": {
+        "free_rate_label": "Will contact you with a quote."
+      },
+      "payment_summary": {
+        "free_label": "Will contact you with a quote."
+      },
+      "payment": {
+        "free_order_notice_html": "Will contact you shortly with a quote for package."
+      },
+      "thank_you": {
+        "thank_you_description": "We've accepted your order, and we're getting it ready. We will be in contact with you shortly with a shipping quote.",
+        "confirmed_description": "We've accepted your order, and we're getting it ready. We will be in contact with you shortly with a shipping quote."
       }
     }
   }
