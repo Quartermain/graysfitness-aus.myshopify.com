@@ -150,6 +150,13 @@
             
           {% endif %}
 
+          {% unless collection_handles contains 'coming-soon' %}
+            {% include 'product-form' with 'product' %}
+          {% endunless %}
+          <form action="cart">
+          		<div class="g-atc"></div>
+          	</form>            
+            
           {% if section.settings.product_description_position == "top" %}
             {% if product.description != blank %}
              <div class="description" itemprop="description">
@@ -157,13 +164,6 @@
              </div>
            {% endif %}
           {% endif %}
-
-          {% unless collection_handles contains 'coming-soon' %}
-            {% include 'product-form' with 'product' %}
-          {% endunless %}
-          <form action="cart">
-          		<div class="g-atc"></div>
-          	</form>
 
           {% if section.settings.product_description_position == "bottom" %}
             {% if product.description != blank %}
